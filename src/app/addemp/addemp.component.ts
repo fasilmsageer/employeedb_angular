@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class AddempComponent {
 
+  empcode=""
   name=""
   designation=""
   salary=""
@@ -20,7 +21,7 @@ export class AddempComponent {
 
   readValue=()=>
   {
-    let data:any={"name":this.name,"designation":this.designation,"salary":this.salary,"companyname":this.companyname,"mobnumber":this.mobnumber,"username":this.username,
+    let data:any={"empcode":this.empcode,"name":this.name,"designation":this.designation,"salary":this.salary,"companyname":this.companyname,"mobnumber":this.mobnumber,"username":this.username,
     "password":this.password}
     console.log(data)
     
@@ -28,6 +29,7 @@ export class AddempComponent {
       (response:any)=>{
         console.log(response)
         if (response.status=="success"){
+          this.empcode=""
           this.name=""
           this.designation=""
           this.salary=""
