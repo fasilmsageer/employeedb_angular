@@ -15,6 +15,10 @@
             </div>
             <div class="row g-3 mt-4" *ngFor="let j of searchdata">
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Empcode</label>
+                    <input type="text" class="form-control" value="{{j.empcode}}">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Name</label>
                     <input type="text" class="form-control" value="{{j.name}}">
                 </div>
@@ -37,6 +41,9 @@
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Username</label>
                     <input type="text" class="form-control" value="{{j.username}}">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                    <button (click)="deleteBtnClick(j.id)" class="btn btn-danger">Delete</button>
                 </div>
             </div>
         </div>

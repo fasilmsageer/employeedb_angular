@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { generate } from 'rxjs';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -28,5 +29,23 @@ export class SearchempComponent {
       }
     )
   }
+
+  deleteBtnClick=(id:any)=>{
+    let data:any={"id":id}
+    this.api.deleteemployee(data).subscribe(
+      (generated:any)=>{
+        console.log(generated)
+        if(generated.status=="success"){
+          alert("deleted successfully")
+        }else{
+          alert("unsuccessful deletion")
+        }
+      }
+      )
+      
+    
+        
+    }
+  
 
 }
